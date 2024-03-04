@@ -1,0 +1,67 @@
+<form
+  [formGroup]="registrationForm"
+  (ngSubmit)="onSubmit()"
+  class="registration-form"
+>
+  <label for="firstName">Имя:</label>
+  <input id="firstName" type="text" formControlName="firstName" />
+  <div
+    *ngIf="
+      registrationForm.get('firstName')?.hasError('pattern') &&
+      registrationForm.get('firstName')?.touched
+    "
+  >
+    Некорректное имя
+  </div>
+
+  <label for="lastName">Фамилия:</label>
+  <input id="lastName" type="text" formControlName="lastName" />
+  <div
+    *ngIf="
+      registrationForm.get('lastName')?.hasError('pattern') &&
+      registrationForm.get('lastName')?.touched
+    "
+  >
+    Некорректная фамилия
+  </div>
+
+  <label for="phone">Телефон:</label>
+  <input id="phone" type="text" formControlName="phone" />
+  <div
+    *ngIf="
+      registrationForm.get('phone')?.hasError('pattern') &&
+      registrationForm.get('phone')?.touched
+    "
+  >
+    Некорректный телефон
+  </div>
+
+  <label for="email">Email:</label>
+  <input id="email" type="text" formControlName="email" />
+  <div
+    *ngIf="
+      registrationForm.get('email')?.hasError('email') &&
+      registrationForm.get('email')?.touched
+    "
+  >
+    Некорректный email
+  </div>
+
+  <div formArrayName="interests">
+    <div
+      *ngFor="let interest of interests.controls; let i = index"
+      class="interest-item"
+    >
+      <label for="interest">Интерес {{ i + 1 }}:</label>
+      <div class="input-group">
+        <input id="interest" type="text" formControlName="interest" />
+        <button type="button" class="remove-button" (click)="removeInterest(i)">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+    </div>
+    <button type="button" class="add-interest-button" (click)="addInterest()">
+      <i class="fas fa-plus"></i> Добавить интерес
+    </button>
+  </div>
+</form>

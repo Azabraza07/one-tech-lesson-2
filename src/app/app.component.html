@@ -1,6 +1,7 @@
 <div class="app">
   <h1>Task for directives</h1>
-  <input [(ngModel)]="inputText" (input)="checkInput()" />
+  <app-registration></app-registration>
+  <!-- <input [(ngModel)]="inputText" (input)="checkInput()" />
   <div *ngIf="hasSpecialCharacters" style="color: red">Спецсимволы запрещены</div>
   <div *ngIf="isPrime !== null" [style.color]="isPrime ? 'blue' : 'green'">
     {{ isPrime ? 'Вы ввели простое число' : 'Вы ввели составное число' }}
@@ -8,5 +9,5 @@
   <button (click)="saveInput()">Сохранить</button>
   <ul>
     <li *ngFor="let item of savedItems">{{ item.text | colorText }}</li>
-  </ul>
+  </ul> -->
 </div>

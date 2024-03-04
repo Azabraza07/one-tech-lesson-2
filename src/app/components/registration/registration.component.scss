@@ -1,0 +1,55 @@
+.registration-form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  div {
+    color: red;
+  }
+  
+  .interest-item {
+    margin-bottom: 10px;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .remove-button,
+  .add-interest-button {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 3px;
+  }
+  
+  .add-interest-button {
+    margin-top: 10px;
+  }
+  
+  .fa-trash,
+  .fa-plus {
+    margin-right: 5px;
+  }
+  
